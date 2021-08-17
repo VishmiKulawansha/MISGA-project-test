@@ -17,23 +17,22 @@
                     <!-- Navbar Menu -->
                     <ul class="navbar-nav ml-auto">
                         <?php
-                        if(isset($_SESSION['user_type'])) {
-                            if($_SESSION['user_type'] == "customer") {
+                        if (isset($_SESSION['user_type'])) {
+                            if ($_SESSION['user_type'] == "customer") {
                                 echo '<li class="nav-item">
                                 <a href="shop.php" class="nav-link">Shop Now</a>
                             </li>';
-                            }
-                            else {
+                            } else {
                                 echo '<li class="nav-item">
                                 <a href="sell.php" class="nav-link">Sell</a>
                             </li>';
-                            }    
-                        }else {
+                            }
+                        } else {
                             echo '<li class="nav-item">
                             <a href="shop.php" class="nav-link">Shop Now</a>
-                        </li>';  
+                        </li>';
                         }
-                        
+
                         ?>
                         <li class="nav-item">
                             <a href="about-us.php" class="nav-link ">About-Us</a>
@@ -45,7 +44,7 @@
                             <a href="contact-us.php" class="nav-link">Contact-Us</a>
                         </li>
 
-<!-- navbar shop -->
+                        <!-- navbar shop -->
                         <li class="nav-item dropdown">
                             <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-shopping-basket"></i> <span class="badge badge-primary"></span>
@@ -142,15 +141,13 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <div class=" text-dark "> <?php
-                                                        if (isset($_SESSION['login_user'])) {
-                                                            $user =  $_SESSION['login_user'];
-                                                            echo '<span class="d-none d-lg-inline mr-2 text-gray-600 small">' . "" . $_SESSION['login_user'] . " | " . '</span>';
-                                                        }
-
-
-
-                                                        ?> </div>
+                            <div class=" text-dark ">
+                                <?php
+                                if (isset($_SESSION['login_user'])) {
+                                    $user =  $_SESSION['login_user'];
+                                    echo '<span class="d-none d-lg-inline mr-2 text-gray-600 small">' . "" . $_SESSION['login_user'] . " | " . '</span>';
+                                }
+                                ?> </div>
                         </li>
 
                     </ul>
