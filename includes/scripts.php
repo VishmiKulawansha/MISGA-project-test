@@ -26,6 +26,7 @@ try {
          $sql = "SELECT * FROM farmer WHERE farmerCode = $farmerCode AND password  = $password";
          $result = mysqli_query($conn, $sql);
 
+         $row = mysqli_fetch_assoc($result);
 
          $count = mysqli_num_rows($result);
          // echo $count;
@@ -33,8 +34,14 @@ try {
          // If result matched $myusername and $mypassword, table row must be 1 row
 
          if ($count == 1) {
-
+            session_unset();
+            $_SESSION['user_type'] = "farmer";
             $_SESSION['login_user'] = $farmerCode;
+            $_SESSION['name'] = $row['fullName'];
+            $_SESSION['farmName'] = $row['farmName'];
+            $_SESSION['address'] = $row['farmAddress'];
+            $_SESSION['farmArea'] = $row['farmArea'];
+            $_SESSION['telephone'] = $row['teleNumber'];
             header("location: ../shop.php");
 
                 } else {
@@ -76,6 +83,8 @@ try {
 
          if ($count == 1) {
             // Create session data
+            session_unset();
+            $_SESSION['user_type'] = "customer";
             $_SESSION['login_user'] = $email;
             $_SESSION['telephone'] = $row['teleNumber'];
             $_SESSION['address'] = $row['address'];

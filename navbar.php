@@ -16,9 +16,25 @@
                 <div class="collapse navbar-collapse" id="navbarcollapse">
                     <!-- Navbar Menu -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <?php
+                        if(isset($_SESSION['user_type'])) {
+                            if($_SESSION['user_type'] == "customer") {
+                                echo '<li class="nav-item">
+                                <a href="shop.php" class="nav-link">Shop Now</a>
+                            </li>';
+                            }
+                            else {
+                                echo '<li class="nav-item">
+                                <a href="sell.php" class="nav-link">Sell</a>
+                            </li>';
+                            }    
+                        }else {
+                            echo '<li class="nav-item">
                             <a href="shop.php" class="nav-link">Shop Now</a>
-                        </li>
+                        </li>';  
+                        }
+                        
+                        ?>
                         <li class="nav-item">
                             <a href="about-us.php" class="nav-link ">About-Us</a>
                         </li>
@@ -29,7 +45,7 @@
                             <a href="contact-us.php" class="nav-link">Contact-Us</a>
                         </li>
 
-
+<!-- navbar shop -->
                         <li class="nav-item dropdown">
                             <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-shopping-basket"></i> <span class="badge badge-primary"></span>
@@ -107,11 +123,11 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="userProfile.php" class="dropdown-item">
-                                <i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;Profile
+                                    <i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;Profile
                                 </a>
                                 <a href="register.php" class="dropdown-item">
                                     <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Register
-                                </a> 
+                                </a>
                                 <form action="login.php" method="POST">
                                     <button type="submit" class="dropdown-item" name="login">
                                         <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Login

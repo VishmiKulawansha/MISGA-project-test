@@ -26,7 +26,7 @@ include 'includes/JS.php';
                     <div class="col">
                         <div class="card shadow mb-3">
                             <div class="card-header py-3">
-                                <p class="text-primary m-0 font-weight-bold">User Details</p>
+                                <p class="text-primary m-0 font-weight-bold">Customer Details</p>
                             </div>
                             <div class="card-body">
                                 <form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
