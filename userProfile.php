@@ -1,7 +1,11 @@
 <?php
 session_start();
-include 'includes/dbcon.php';
 
+// prevent unauthorized access
+if(!isset($_SESSION['user_type'])){
+    header("location: login.php?invalid-login");
+}
+include 'includes/dbcon.php';
 include 'includes/head.php';
 include 'navbar.php';
 include 'includes/header.php';
@@ -26,10 +30,37 @@ include 'includes/JS.php';
                     <div class="col">
                         <div class="card shadow mb-3">
                             <div class="card-header py-3">
-                                <p class="text-primary m-0 font-weight-bold">Customer Details</p>
+                                <p class="text-primary m-0 font-weight-bold">User Details</p>
                             </div>
                             <div class="card-body">
-                                <form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
+                                <?php
+                                  if(isset($_SESSION['user_type'])) {
+                                    if($_SESSION['user_type'] == "farmer") {
+                                     echo 'asdsad'.$_SESSION['address'].'dasdsa';
+
+                                     echo '<form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
+                                     <div class="form-row">
+                                         <div class="col">
+                                             <div class="form-group"><label for="fullName"><strong>Full Name</strong></label><input class="form-control" type="text" placeholder="Full Name" name="fullName" value="'. $_SESSION['name'] .'" required></div>
+                                         </div>
+                                         <div class="col">
+                                             <div class="form-group"><label for="address"><strong>Address</strong></label><input class="form-control" type="address" placeholder="Address" name="address" value="'. $_SESSION['address'].'" required></div>
+                                         </div>
+                                     </div>
+                                     <div class="form-row">
+                                         <div class="col">
+                                             <div class="form-group"><label for="teleNumber"><strong>Whatsapp Number</strong></label><input class="form-control" type="text" placeholder="Whatsapp Number" name="teleNumber" value="'.$_SESSION['telephone'].'" required></div>
+                                         </div>
+                                         <div class="col">
+                                             <div class="form-group"><label for="email"><strong>Email </strong></label><input class="form-control" type="text" placeholder="" name="farmerCode" value="'.$_SESSION['farmerCode'] .'" disabled></div>
+                                         </div>
+                                     </div>
+                                     <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" id="updateFarmer" name="updateCustomer">Save Changes</button></div>
+                                 </form>';
+                                    }
+                                }
+                                ?>
+                                <!-- <form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
                                     <div class="form-row">
                                         <div class="col">
                                             <div class="form-group"><label for="fullName"><strong>Full Name</strong></label><input class="form-control" type="text" placeholder="Full Name" name="fullName" value="<?php echo  $_SESSION['name'] ?>" required></div>
@@ -47,7 +78,7 @@ include 'includes/JS.php';
                                         </div>
                                     </div>
                                     <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" id="updateCustomer" name="updateCustomer">Save Changes</button></div>
-                                </form>
+                                </form> -->
                             </div>
                         </div>
                         <div class="card shadow">

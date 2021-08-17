@@ -42,6 +42,7 @@ try {
             $_SESSION['address'] = $row['farmAddress'];
             $_SESSION['farmArea'] = $row['farmArea'];
             $_SESSION['telephone'] = $row['teleNumber'];
+            $_SESSION['farmerCode'] = $farmerCode;
             header("location: ../shop.php");
 
                 } else {
