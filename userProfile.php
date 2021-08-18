@@ -20,12 +20,15 @@ include 'includes/JS.php';
                     <form id="formUpdateProfilePic" class="formUpdateProfilePic" method="POST" action="includes/profile.php" enctype="multipart/form-data">
                         <img alt="User Pic" class="rounded-circle p-2" src=" 
                         <?php
+                        // DISPLAY USER PROFILE IMAGE
+
                         if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == "farmer") {
                             echo 'assets\uploads\farmer\profile\\' . $_SESSION['profilePic'];
-                        } else {
+                        } else if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == "customer") {
                             echo 'assets\uploads\customer\profile\\' . $_SESSION['profilePic'];
+                        } else  {
+                            echo 'https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png';
                         }
-
                         ?>
                          " id="profile-image1" height="200">
                         <input id="profile-image-upload" name="profile-image-upload" class="hidden" type="file" onchange="previewFile()">
