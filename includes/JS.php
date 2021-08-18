@@ -10,14 +10,7 @@
 <script type="text/javascript" src="assets/js/theme.js"></script>
 <script src="assets/js/sweetalert.min.js"></script>
 
-<!--<script>
-    swal({
-        title: "Good job!",
-        text: "Successfully added!",
-        icon: "success",
-        button: "OK!",
-    });
-</script> -->
+
 
 </body>
 
