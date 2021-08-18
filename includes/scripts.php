@@ -43,6 +43,7 @@ try {
             $_SESSION['farmArea'] = $row['farmArea'];
             $_SESSION['telephone'] = $row['teleNumber'];
             $_SESSION['farmerCode'] = $farmerCode;
+            $_SESSION['profilePic'] = $row['profilePic'];
             header("location: ../shop.php");
 
                 } else {
@@ -91,6 +92,7 @@ try {
             $_SESSION['address'] = $row['address'];
             $_SESSION['name'] = $row['fullName'];
             $_SESSION['email'] = $row['email'];
+            $_SESSION['profilePic'] = $row['profilePic'];
             
             
             header("location: ../shop.php");

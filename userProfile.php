@@ -17,26 +17,38 @@ include 'includes/JS.php';
         <div class="col-lg-12">
             <div class="card mb-3">
                 <div class="profile-pic center">
+                    <form id="formUpdateProfilePic" class="formUpdateProfilePic" method="POST" action="includes/profile.php" enctype="multipart/form-data">
+                        <img alt="User Pic" class="rounded-circle p-2" src=" 
+                        <?php
+                        if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == "farmer") {
+                            echo 'assets\uploads\farmer\profile\\' . $_SESSION['profilePic'];
+                        } else {
+                            echo 'assets\uploads\customer\profile\\' . $_SESSION['profilePic'];
+                        }
 
-                    <img alt="User Pic" src="https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png" id="profile-image1" height="200">
-                    <input id="profile-image-upload" class="hidden" type="file" onchange="previewFile()">
-                    <div style="color:#999;"> </div>
+                        ?>
+                         " id="profile-image1" height="200">
+                        <input id="profile-image-upload" name="profile-image-upload" class="hidden" type="file" onchange="previewFile()">
 
-                    <div class="row">
-                        <div class="col">
-                            <div class="card shadow mb-3">
-                                <div class="card-header py-3">
-                                    <p class="text-primary m-0 font-weight-bold">User Details</p>
-                                </div>
-                                <div class="card-body">
+                        <button class="btn btn-primary btn-sm" type="submit" id="UpdateProfilePic" name="UpdateProfilePic">Submit</button>
+                        <div style="color:#999;"> </div>
+                </div>
+                </form>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow mb-3">
+                            <div class="card-header py-3">
+                                <p class="text-primary m-0 font-weight-bold">User Details</p>
+                            </div>
+                            <div class="card-body">
 
-                                    <!-- FARMER / CUSTOMER UPDATE FORM -->
-                                    <?php
-                                    if (isset($_SESSION['user_type'])) {
-                                        // FARMER CODE
-                                        if ($_SESSION['user_type'] == "farmer") {
+                                <!-- FARMER / CUSTOMER UPDATE FORM -->
+                                <?php
+                                if (isset($_SESSION['user_type'])) {
+                                    // FARMER CODE
+                                    if ($_SESSION['user_type'] == "farmer") {
 
-                                            echo '<form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
+                                        echo '<form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
                                      <div class="form-row">
                                          <div class="col">
                                              <div class="form-group"><label for="fullName"><strong>Full Name</strong></label><input class="form-control" type="text" placeholder="Full Name" name="fullName" value="' . $_SESSION['name'] . '" required></div>
@@ -86,10 +98,10 @@ include 'includes/JS.php';
                         </div>
                         </form>
                     </div>
-                </div>';
-                                        } else if ($_SESSION['user_type'] == "customer") {
-                                            // CUSTOMER CODE
-                                            echo '<form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
+                ';
+                                    } else if ($_SESSION['user_type'] == "customer") {
+                                        // CUSTOMER CODE
+                                        echo '<form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group"><label for="fullName"><strong>Full Name</strong></label><input class="form-control" type="text" placeholder="Full Name" name="fullName" value="' . $_SESSION['name'] . '" required></div>
@@ -133,10 +145,10 @@ include 'includes/JS.php';
                     </div>
                 </div>
                                     ';
-                                        }
                                     }
-                                    ?>
-                                    <!-- <form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
+                                }
+                                ?>
+                                <!-- <form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
                                     <div class="form-row">
                                         <div class="col">
                                             <div class="form-group"><label for="fullName"><strong>Full Name</strong></label><input class="form-control" type="text" placeholder="Full Name" name="fullName" value="<?php echo  $_SESSION['name'] ?>" required></div>
@@ -155,7 +167,7 @@ include 'includes/JS.php';
                                     </div>
                                     <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" id="updateCustomer" name="updateCustomer">Save Changes</button></div>
                                 </form> -->
-                                    <!-- </div>
+                                <!-- </div>
                         </div>
                         <div class="card shadow">
                             <div class="card-header py-3">
@@ -178,17 +190,17 @@ include 'includes/JS.php';
                         </form>
                     </div>
                 </div> -->
-                                    <!--  sdfsdf -->
-                                </div>
+                                <!--  sdfsdf -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Footer -->
-        <?php
-        include_once 'includes/footer.php';
-        ?>
+    </div>
+    <!-- Footer -->
+    <?php
+    include_once 'includes/footer.php';
+    ?>
 
-        </html>
+    </html>

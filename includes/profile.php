@@ -123,4 +123,53 @@ else if (isset($_POST['submitFarPassword'])) {
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
+} else if (isset($_POST['UpdateProfilePic'])) {
+    // for the database
+    // $bio = stripslashes($_POST['bio']);
+    $profileImageName = time() . '-' . $_FILES["profile-image-upload"]["name"];
+    $target_dir = "";
+    $sql = "";
+    $email = "";
+    $farmerCode = "";
+    // For image upload
+    if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == "farmer") {
+        $farmerCode = $_SESSION['farmerCode'];
+        $target_dir = "../assets/uploads/farmer/profile/";
+        $sql = "UPDATE farmer SET profilePic= '$profileImageName' WHERE farmerCode='$farmerCode'";
+    } else {
+        $email = $_SESSION['email'];
+        $target_dir = "../assets/uploads/customer/profile/";
+        $sql = "UPDATE customer SET profilePic= '$profileImageName' WHERE email='$email'";
+    }
+
+    $target_file = $target_dir . basename($profileImageName);
+
+    // VALIDATION
+    // validate image size. Size is calculated in Bytes
+    if ($_FILES['profile-image-upload']['size'] > 2000000) {
+        echo  "Image size should not be greater than 2000Kb";
+        $msg_class = "alert-danger";
+    }
+    // check if file exists
+    if (file_exists($target_file)) {
+        echo "File already exists";
+        $msg_class = "alert-danger";
+    }
+    // Upload image only if no errors
+    if (empty($error)) {
+        if (move_uploaded_file($_FILES["profile-image-upload"]["tmp_name"], $target_file)) {
+
+            if (mysqli_query($conn, $sql)) {
+                $_SESSION['profilePic'] =  $profileImageName;
+                echo "Image uploaded and saved in the Database";
+                $msg_class = "alert-success";
+            } else {
+                echo "There was an error in the database";
+                $msg_class = "alert-danger";
+            }
+        } else {
+            echo "There was an erro uploading the file";
+            $msg = "alert-danger";
+        }
+    }
 }
