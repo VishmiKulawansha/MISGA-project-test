@@ -118,7 +118,19 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="avatar-header"><img src="assets/img/logo/avatar.jpg"></div>
+                                <div class="avatar-header"><img src="
+                                <?php
+                                // DISPLAY USER PROFILE IMAGE
+
+                                if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == "farmer") {
+                                    echo 'assets\uploads\farmer\profile\\' . $_SESSION['profilePic'];
+                                } else if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == "customer") {
+                                    echo 'assets\uploads\customer\profile\\' . $_SESSION['profilePic'];
+                                } else {
+                                    echo 'https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png';
+                                }
+                                ?>
+                                "></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="userProfile.php" class="dropdown-item">
