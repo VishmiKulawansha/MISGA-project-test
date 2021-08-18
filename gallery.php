@@ -5,7 +5,7 @@ include 'includes/header.php';
 include 'includes/JS.php';
 ?>
 
-<section class="page-bg">
+<div class="container">
     <div class="container page-bg">
         <div class="row">
             <div class="col-md-4">
@@ -15,7 +15,6 @@ include 'includes/JS.php';
                 <p class="text-style-2"><img src="assets/img/Gallery/gallery-2.jpg" width="100%" height="auto" style="border-radius: 10px;">A zone of our main farm in colombo</p>
             </div>
         </div>
-
 
         <div class="row">
             <div class="col-md-8">
@@ -75,7 +74,7 @@ include 'includes/JS.php';
             <h1></h1>
         </div>
     </div>
-</section>
+</div>
 
 <?php
 include 'includes/footer.php';
