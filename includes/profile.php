@@ -16,21 +16,17 @@ if (isset($_POST['updateCustomer'])) {
         $_SESSION['name'] = $fullName;
         $_SESSION['address'] = $address;
         $_SESSION['telephone'] = $teleNumber;
-        //  ALERT AND GO BACK PREVIOUS PAGE
-        echo '<script>';
-        echo 'if (window.confirm("User Details updated! \n Go back to previous page?"))
-        {
-            // They clicked Yes
-           window.history.back();
-        }
-        else
-        {
-            // They clicked no
-            window.history.back();
-        }';
-        echo '</script> ';
+
+        // alert
+        $_SESSION['status'] = "User details updated Successfully!";
+        $_SESSION['status_code'] = "success";
+        header("location: ../UserProfile.php?success");
     } else {
-        echo "Error updating record: " . mysqli_error($conn);
+        // alert
+        $_SESSION['status'] = "Failed to update user details! Try again.";
+        $_SESSION['status_code'] = "error";
+        header("location: ../UserProfile.php?success");
+        // echo "Error updating record: " . mysqli_error($conn);
     }
 }
 // submit customer Password
@@ -43,21 +39,16 @@ else if (isset($_POST['submitCusPassword'])) {
     $queryPassword = "UPDATE customer SET password= '$newPass' WHERE email='$email'";
     if (mysqli_query($conn, $queryPassword)) {
 
-        //  ALERT AND GO BACK PREVIOUS PAGE
-        echo '<script>';
-        echo 'if (window.confirm("Password updated! \n Go back to previous page?"))
-        {
-            // They clicked Yes
-            window.history.back();
-        }
-        else
-        {
-            // They clicked no
-            window.history.back();
-        }';
-        echo '</script> ';
+        // alert
+        $_SESSION['status'] = "New password updated Successfully!";
+        $_SESSION['status_code'] = "success";
+        header("location: ../UserProfile.php?password-updated");
     } else {
-        echo "Error updating record: " . mysqli_error($conn);
+        // alert
+        $_SESSION['status'] = "Password update failed! Try again";
+        $_SESSION['status_code'] = "error";
+        header("location: ../UserProfile.php?password-update-failed");
+        // echo "Error updating record: " . mysqli_error($conn);
     }
 }
 // submit farmer details
@@ -81,21 +72,16 @@ else if (isset($_POST['updateFarmer'])) {
         $_SESSION['farmArea'] = $farmArea;
         $_SESSION['telephone'] =  $teleNumber;
 
-        //  ALERT AND GO BACK PREVIOUS PAGE
-        echo '<script>';
-        echo 'if (window.confirm("Farmer Details updated! \n Go back to previous page?"))
-        {
-            // They clicked Yes
-           window.history.back();
-        }
-        else
-        {
-            // They clicked no
-            window.history.back();
-        }';
-        echo '</script> ';
+        // alert
+        $_SESSION['status'] = "Farmer details updated Successfully!";
+        $_SESSION['status_code'] = "success";
+        header("location: ../UserProfile.php?success");
     } else {
-        echo "Error updating record: " . mysqli_error($conn);
+        // alert
+        $_SESSION['status'] = "farmer details update failed! Try again";
+        $_SESSION['status_code'] = "error";
+        header("location: ../UserProfile.php?failed");
+        // echo "Error updating record: " . mysqli_error($conn);
     }
 }
 // submit Farmer Password
@@ -107,21 +93,15 @@ else if (isset($_POST['submitFarPassword'])) {
 
     $queryPassword = "UPDATE farmer SET password= '$newPass' WHERE farmerCode='$farmerCode'";
     if (mysqli_query($conn, $queryPassword)) {
-
-        //  ALERT AND GO BACK PREVIOUS PAGE
-        echo '<script>';
-        echo 'if (window.confirm("Password updated! \n Go back to previous page?"))
-        {
-            // They clicked Yes
-            window.history.back();
-        }
-        else
-        {
-            // They clicked no
-            window.history.back();
-        }';
-        echo '</script> ';
+        // alert
+        $_SESSION['status'] = "New password updated Successfully!";
+        $_SESSION['status_code'] = "success";
+        header("location: ../UserProfile.php?password-update-success");
     } else {
+        // alert
+        $_SESSION['status'] = "Failed to update password ! Try again.";
+        $_SESSION['status_code'] = "error";
+        header("location: ../UserProfile.php?password-update-failed");
         echo "Error updating record: " . mysqli_error($conn);
     }
 }
@@ -150,13 +130,20 @@ else if (isset($_POST['UpdateProfilePic'])) {
     // VALIDATION
     // validate image size. Size is calculated in Bytes
     if ($_FILES['profile-image-upload']['size'] > 2000000) {
-        echo  "Image size should not be greater than 2000Kb";
         $msg_class = "alert-danger";
+        // alert
+        $_SESSION['status'] = "Image size should not be greater than 2000Kb !";
+        $_SESSION['status_code'] = "warning";
+        header("location: ../UserProfile.php?upload-failed");
     }
     // check if file exists
     if (file_exists($target_file)) {
-        echo "File already exists";
+
         $msg_class = "alert-danger";
+        // alert
+        $_SESSION['status'] = "File already exists! ";
+        $_SESSION['status_code'] = "warning";
+        header("location: ../UserProfile.php?upload-failed");
     }
     // Upload image only if no errors
     if (empty($error)) {
@@ -164,21 +151,32 @@ else if (isset($_POST['UpdateProfilePic'])) {
 
             if (mysqli_query($conn, $sql)) {
                 $_SESSION['profilePic'] =  $profileImageName;
-                echo "Image uploaded and saved in the Database";
+
                 $msg_class = "alert-success";
+                // alert
+                $_SESSION['status'] = "Image uploaded and saved to the database!";
+                $_SESSION['status_code'] = "success";
+                header("location: ../UserProfile.php?upload-success");
             } else {
-                echo "There was an error in the database";
+
                 $msg_class = "alert-danger";
+                // alert
+                $_SESSION['status'] = "Error uploading to the database! Try again.";
+                $_SESSION['status_code'] = "error";
+                header("location: ../UserProfile.php?upload-failed");
             }
         } else {
-            echo "There was an erro uploading the file";
+
             $msg = "alert-danger";
+            // alert
+            $_SESSION['status'] = "Select an image to upload! Try again.";
+            $_SESSION['status_code'] = "error";
+            header("location: ../UserProfile.php?upload-failed");
         }
     }
 }
 // update farm pictures
 else if (isset($_POST['UpdateFarmPhotos'])) {
-
 
 
     $errors = array();
@@ -202,25 +200,12 @@ else if (isset($_POST['UpdateFarmPhotos'])) {
     $rowcount = mysqli_num_rows($result);
 
     if ($rowcount > 0) {
-        //  ALERT AND GO BACK PREVIOUS PAGE
-        echo '<script>';
-        echo 'if (window.confirm("You have already uploaded farm images!  \n Please go back and remove them to upload new images?"))
-         {
-             
-             // They clicked Yes
-            window.history.back();
-           
-            
-         }
-         else
-         {
-             // They clicked no
-             window.history.back();
-         }';
-        echo '</script> ';
+
+        // alert
+        $_SESSION['status'] = "Upload failed! You have already uploaded farm images! Please go back and remove them to upload new images.";
+        $_SESSION['status_code'] = "warning";
+        header("location: ../UserProfile.php?upload-failed");
     } else {
-
-
 
         // uploading code
 
@@ -291,27 +276,22 @@ else if (isset($_POST['UpdateFarmPhotos'])) {
             echo "Please, Select file(s) to upload.";
         }
     }
-} else if (isset($_POST['deleteFarmPhotos'])) {
+}
+// delete farm photos 
+else if (isset($_POST['deleteFarmPhotos'])) {
     $farmerCode = $_SESSION['farmerCode'];
     $sql = "DELETE FROM farm_images WHERE farmerCode = '$farmerCode'";
     if (mysqli_query($conn, $sql) or trigger_error("Query Failed! SQL: $sql - Error: " . mysqli_error($conn), E_USER_ERROR)) {
-        //  ALERT AND GO BACK PREVIOUS PAGE
-        echo '<script>';
-        echo 'if (window.confirm("You have deleted your farm images!  \n  Go back previous page?"))
-         {
-             
-             // They clicked Yes
-            window.history.back();
-           
-            
-         }
-         else
-         {
-             // They clicked no
-             window.history.back();
-         }';
-        echo '</script> ';
+
+        // alert
+        $_SESSION['status'] = "You have successfully deleted your farm images from the database!";
+        $_SESSION['status_code'] = "success";
+        header("location: ../UserProfile.php?delete-success");
     } else {
         echo "<b>Erro in Uploading files to database:</b>";
+        // alert
+        $_SESSION['status'] = "Error deleting files from database! Try again.";
+        $_SESSION['status_code'] = "error";
+        header("location: ../UserProfile.php?delete-failed");
     }
 }

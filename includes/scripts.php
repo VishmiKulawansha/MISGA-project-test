@@ -44,11 +44,18 @@ try {
             $_SESSION['telephone'] = $row['teleNumber'];
             $_SESSION['farmerCode'] = $farmerCode;
             $_SESSION['profilePic'] = $row['profilePic'];
-            header("location: ../shop.php");
 
-                } else {
-            $error = "Your Login Name or Password is invalid";
-            header("location: logFarmer.php?invalid-email-or-passowrd");
+            // alert
+            $_SESSION['status'] = "Login Successful!";
+            $_SESSION['status_code'] = "success";
+
+            header("location: ../shop.php");
+         } else {
+
+            // alert
+            $_SESSION['status'] = "Login Failed!";
+            $_SESSION['status_code'] = "error";
+            header("location: ../login.php?invalid-email-or-passowrd");
          }
          mysqli_close($conn);
       }
@@ -93,12 +100,17 @@ try {
             $_SESSION['name'] = $row['fullName'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['profilePic'] = $row['profilePic'];
-            
-            
+
+            // alert
+            $_SESSION['status'] = "Login Successfull!";
+            $_SESSION['status_code'] = "success";
             header("location: ../shop.php");
          } else {
-            $error = "Your Login Name or Password is invalid";
-            header("location: logCustomer.php?invalid-email-or-password");
+            // alert
+            $_SESSION['status'] = "Login Failed!";
+            $_SESSION['status_code'] = "error";
+
+            header("location: ../login.php?invalid-email-or-password");
          }
          mysqli_close($conn);
       }
@@ -106,4 +118,3 @@ try {
 } catch (Exception $e) {
    echo $e;
 }
-
