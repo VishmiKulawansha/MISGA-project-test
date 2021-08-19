@@ -16,9 +16,24 @@
                 <div class="collapse navbar-collapse" id="navbarcollapse">
                     <!-- Navbar Menu -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <?php
+                        if (isset($_SESSION['user_type'])) {
+                            if ($_SESSION['user_type'] == "customer") {
+                                echo '<li class="nav-item">
+                                <a href="shop.php" class="nav-link">Shop Now</a>
+                            </li>';
+                            } else {
+                                echo '<li class="nav-item">
+                                <a href="sell.php" class="nav-link">Sell</a>
+                            </li>';
+                            }
+                        } else {
+                            echo '<li class="nav-item">
                             <a href="shop.php" class="nav-link">Shop Now</a>
-                        </li>
+                        </li>';
+                        }
+
+                        ?>
                         <li class="nav-item">
                             <a href="about-us.php" class="nav-link ">About-Us</a>
                         </li>
@@ -29,7 +44,7 @@
                             <a href="contact-us.php" class="nav-link">Contact-Us</a>
                         </li>
 
-
+                        <!-- navbar shop -->
                         <li class="nav-item dropdown">
                             <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-shopping-basket"></i> <span class="badge badge-primary"></span>
@@ -103,15 +118,35 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="avatar-header"><img src="assets/img/logo/avatar.jpg"></div>
+                                <div class="avatar-header"><img src="
+                                <?php
+                                // DISPLAY USER PROFILE IMAGE
+
+                                if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == "farmer") {
+                                    echo 'assets\uploads\farmer\profile\\' . $_SESSION['profilePic'];
+                                } else if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == "customer") {
+                                    echo 'assets\uploads\customer\profile\\' . $_SESSION['profilePic'];
+                                } else {
+                                    echo 'https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png';
+                                }
+                                ?>
+                                "></div>
+
+                                &nbsp;|&nbsp;
+                                <?php
+                                if (isset($_SESSION['login_user'])) {
+                                    $user =  $_SESSION['login_user'];
+                                    echo '<span class="d-none d-lg-inline mr-2 text-gray-600 small">' . "" . $_SESSION['login_user'] . '</span>';
+                                }
+                                ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="userProfile.php" class="dropdown-item">
-                                <i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;Profile
+                                    <i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;Profile
                                 </a>
                                 <a href="register.php" class="dropdown-item">
                                     <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Register
-                                </a> 
+                                </a>
                                 <form action="login.php" method="POST">
                                     <button type="submit" class="dropdown-item" name="login">
                                         <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Login
@@ -125,17 +160,7 @@
 
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <div class=" text-dark "> <?php
-                                                        if (isset($_SESSION['login_user'])) {
-                                                            $user =  $_SESSION['login_user'];
-                                                            echo '<span class="d-none d-lg-inline mr-2 text-gray-600 small">' . "" . $_SESSION['login_user'] . " | " . '</span>';
-                                                        }
 
-
-
-                                                        ?> </div>
-                        </li>
 
                     </ul>
                 </div>

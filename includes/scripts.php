@@ -26,6 +26,7 @@ try {
          $sql = "SELECT * FROM farmer WHERE farmerCode = $farmerCode AND password  = $password";
          $result = mysqli_query($conn, $sql);
 
+         $row = mysqli_fetch_assoc($result);
 
          $count = mysqli_num_rows($result);
          // echo $count;
@@ -33,13 +34,28 @@ try {
          // If result matched $myusername and $mypassword, table row must be 1 row
 
          if ($count == 1) {
-
+            session_unset();
+            $_SESSION['user_type'] = "farmer";
             $_SESSION['login_user'] = $farmerCode;
-            header("location: ../shop.php");
+            $_SESSION['name'] = $row['fullName'];
+            $_SESSION['farmName'] = $row['farmName'];
+            $_SESSION['address'] = $row['farmAddress'];
+            $_SESSION['farmArea'] = $row['farmArea'];
+            $_SESSION['telephone'] = $row['teleNumber'];
+            $_SESSION['farmerCode'] = $farmerCode;
+            $_SESSION['profilePic'] = $row['profilePic'];
 
-                } else {
-            $error = "Your Login Name or Password is invalid";
-            header("location: logFarmer.php?invalid-email-or-passowrd");
+            // alert
+            $_SESSION['status'] = "Login Successful!";
+            $_SESSION['status_code'] = "success";
+
+            header("location: ../shop.php");
+         } else {
+
+            // alert
+            $_SESSION['status'] = "Login Failed!";
+            $_SESSION['status_code'] = "error";
+            header("location: ../login.php?invalid-email-or-passowrd");
          }
          mysqli_close($conn);
       }
@@ -76,17 +92,25 @@ try {
 
          if ($count == 1) {
             // Create session data
+            session_unset();
+            $_SESSION['user_type'] = "customer";
             $_SESSION['login_user'] = $email;
             $_SESSION['telephone'] = $row['teleNumber'];
             $_SESSION['address'] = $row['address'];
             $_SESSION['name'] = $row['fullName'];
             $_SESSION['email'] = $row['email'];
-            
-            
+            $_SESSION['profilePic'] = $row['profilePic'];
+
+            // alert
+            $_SESSION['status'] = "Login Successfull!";
+            $_SESSION['status_code'] = "success";
             header("location: ../shop.php");
          } else {
-            $error = "Your Login Name or Password is invalid";
-            header("location: logCustomer.php?invalid-email-or-password");
+            // alert
+            $_SESSION['status'] = "Login Failed!";
+            $_SESSION['status_code'] = "error";
+
+            header("location: ../login.php?invalid-email-or-password");
          }
          mysqli_close($conn);
       }
@@ -94,4 +118,3 @@ try {
 } catch (Exception $e) {
    echo $e;
 }
-

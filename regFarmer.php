@@ -35,6 +35,11 @@ include 'includes/JS.php';
                             <input class="form-control" type="text" required="" placeholder="Area of Farm (in Perches)" name="farmArea">
                         </div>
                     </div>
+                    <div class="form-group row mt-3">
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" required="" placeholder="Telephone Number" name="teleNumber">
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <div class="col-md-12">
                             <input class="form-control" type="password" required="" placeholder="Password" name="password">

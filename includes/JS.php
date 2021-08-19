@@ -8,17 +8,27 @@
 <script type="text/javascript" src="assets/packages/thumbelina/thumbelina.js"></script>
 <script type="text/javascript" src="assets/packages/bootstrap-touchspin/bootstrap-touchspin.js"></script>
 <script type="text/javascript" src="assets/js/theme.js"></script>
-<script src="assets/js/sweetalert.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!--<script>
-    swal({
-        title: "Good job!",
-        text: "Successfully added!",
-        icon: "success",
-        button: "OK!",
-    });
-</script> -->
 
+
+<!-- sweet alert 2-->
+<?php
+
+if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
+?>
+    <script>
+        Swal.fire({
+
+            text: "<?php echo $_SESSION['status'] ?>",
+            icon: "<?php echo $_SESSION['status_code'] ?>",
+            confirmButtonText: 'Ok'
+        })
+    </script>
+<?php
+    unset($_SESSION['status']);
+}
+?>
 </body>
 
 </html>

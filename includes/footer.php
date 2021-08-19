@@ -9,19 +9,19 @@
                 <h5>Links</h5>
                 <ul>
                     <li>
-                        <a href="about-us.php">About-Us</a>
+                        <a href="about-us.php" style="color:  rgb(255, 255, 255);">About-Us</a>
                     </li>
                     <li>
-                        <a href="contact-us.php">Contact-Us</a>
+                        <a href="contact-us.php" style="color:  rgb(255, 255, 255);">Contact-Us</a>
                     </li>
                     <li>
-                        <a href="faq.php">FAQ</a>
+                        <a href="faq.php" style="color:  rgb(255, 255, 255);">FAQ</a>
                     </li>
                     <li>
-                        <a href="terms.php">Terms</a>
+                        <a href="terms.php" style="color:  rgb(255, 255, 255);">Terms</a>
                     </li>
                     <li>
-                        <a href="privacy.php">Privacy Policy</a>
+                        <a href="privacy.php" style="color:  rgb(255, 255, 255);">Privacy Policy</a>
                     </li>
                 </ul>
             </div>
@@ -29,14 +29,14 @@
                 <h5>Contact</h5>
                 <ul>
                     <li>
-                        <a href="tel:+94114988407"><i class="fas fa-phone"></i> +94114988407</a>
-                        <a href="tel:+52114988408"><i class="fas fa-phone"></i> +52114988408</a>
+                        <a href="tel:+94114988407" style="color:  rgb(255, 255, 255);"><i class="fas fa-phone"></i> +94114988407</a>
+                        <a href="tel:+52114988408" style="color:  rgb(255, 255, 255);"><i class="fas fa-phone"></i> +52114988408</a>
                     </li>
                     <li>
-                        <a href="krishvilla.colombo@gmail.com"><i class="fa fa-envelope"></i> krishvilla.colombo@gmail.com</a>
+                        <a href="krishvilla.colombo@gmail.com" style="color:  rgb(255, 255, 255);"><i class="fa fa-envelope"></i> krishvilla.colombo@gmail.com</a>
                     </li>
                     <li>
-                        <a href="krishvilla.lindula@gmail.com"><i class="fa fa-envelope"></i> krishvilla.lindula@gmail.com</a>
+                        <a href="krishvilla.lindula@gmail.com" style="color:  rgb(255, 255, 255);"><i class="fa fa-envelope"></i> krishvilla.lindula@gmail.com</a>
                     </li>
 
                 </ul>
@@ -44,10 +44,10 @@
                 <h5>Follow Us</h5>
                 <ul class="social">
                     <li>
-                        <a href="www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a style="color:  rgb(255, 255, 255);" href="www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </li>
                     <li>
-                        <a href="www.facebook.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a style="color:  rgb(255, 255, 255);" href="www.facebook.com" target="_blank"><i class="fab fa-instagram"></i></a>
                     </li>
                 </ul>
             </div>

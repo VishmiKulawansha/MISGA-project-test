@@ -5,14 +5,14 @@ include 'includes/header.php';
 include 'includes/JS.php';
 ?>
 
-<section class="bg-leaf">
+<div class="bg-leaf">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center mb-3">
                 <h1 class="title text-uppercase mb-2">Krish Villa Organic</h1>
 
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <p class="text-justify">
                     Krish Villa organic is a leading Sri Lankan eCommerce platform bringing
                     premium online shopping experience to thousands of Sri Lankans and Sri Lankan expats
@@ -38,7 +38,7 @@ include 'includes/JS.php';
             <div class="col-md-4">
                 <img src="assets/img/owner.jpg" class="img-fluid">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <h5>
                     Owner of the Krish Villa
                 </h5>
@@ -60,7 +60,7 @@ include 'includes/JS.php';
         </div>
 
         <div class="row justify-content-center align-items-center text-right mt-3">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <h5>
                     Our products
                 </h5>
@@ -80,7 +80,7 @@ include 'includes/JS.php';
             <div class="col-md-4">
                 <img src="assets/img/deliver.jpg" class="img-fluid">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <h5>
                     Fast & Reliable Delivery Service
                 </h5>
@@ -95,86 +95,84 @@ include 'includes/JS.php';
 
             </div>
         </div>
-    </div>
-    <div class="row justify-content-center align-items-center text-right mt-3">
-        <div class="col-md-6">
-            <h5>
-                Top-notch Customer Service
-            </h5>
-            <p class="text-justify">
-                We’re responsive to our customers in a timely manner with a friendly
-                and personalized experience. We’re known for our excellent customer service,
-                and we will continue to improve our service standards. Our customer service team of
-                professionals ready to help our customers 7 am to 7pm daily via calls, online chats &
-                emails and we’re open every day of the week Monday to Sunday. </p>
+        <div class="row justify-content-center align-items-center text-right mt-3">
+            <div class="col-md-8">
+                <h5>
+                    Top-notch Customer Service
+                </h5>
+                <p class="text-justify">
+                    We’re responsive to our customers in a timely manner with a friendly
+                    and personalized experience. We’re known for our excellent customer service,
+                    and we will continue to improve our service standards. Our customer service team of
+                    professionals ready to help our customers 7 am to 7pm daily via calls, online chats &
+                    emails and we’re open every day of the week Monday to Sunday. </p>
+
+            </div>
+
+            <div class="col-md-4">
+                <img src="assets/img/Customer Service.jpg" class="img-fluid">
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center mt-3">
+            <div class="col-md-4">
+                <img src="assets/img/CONSISTENT HIGHEST CUSTOMER SATISFACTION.jpg" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h5>
+                    Consistent Highest Customer Satisfaction
+                </h5>
+                <p class="text-justify">
+                    Our consistent, highest customer satisfaction rating makes us incredibly proud because
+                    reliability and quality, both in our business models and the way in which we support
+                    our customers is our core values.Check out our reviews and ratings at:Facebook Page,
+                    Instagram Page,twitter page,and Google to see why customers love us. </p>
+
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center text-right mt-3">
+            <div class="col-md-8">
+                <h5>
+                    Technology & Security Driven Online Shopping Site
+                </h5>
+                <p class="text-justify">
+                    We've launched the "iTAP" (Innovation and Technology Adoption Program),
+                    which aims to make krish villa a more technologically advanced eCommerce platform.
+                    Every automated system was developed in-house, and we have our own IT firm, Fexcon,
+                    that helps our customers navigate the ever-changing digital ecosystem.
+                    To protect customer personal information, we are using an extended validation SSL
+                    certificate (EV SSL), which provide the strongest encryption level for the site.
+                    We do not store any credit card information in our system and all communication
+                    channels with payment gateways are encrypted using secure socket layer
+                    technology (EV SSL).
+            </div>
+
+            <div class="col-md-4">
+                <img src="assets/img/TECHNOLOGY & SECURITY DRIVEN ONLINE SHOPPING SITE.jpg" class="img-fluid">
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center mt-3">
+            <div class="col-md-4">
+                <img src="assets/img/awards.jpg" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h5>
+                    Awards, Press Releases and Media
+                </h5>
+                <p class="text-justify">
+                    WishQue won SLT Zero One Award Under the Best
+                    Digital Enabled Product/Service - Retail Sector - 2019 (Award ceremony held i
+                    n Colombo on 4 March 2020). Our constant innovation and investments towards
+                    digital enhancements get us this award. Every day we are evolving and hoping to
+                    release many cutting edge features in the future. For more details for Awards, Press Releases and Media, please visit this page:
+            </div>
 
         </div>
-
-        <div class="col-md-4">
-            <img src="assets/img/Customer Service.jpg" class="img-fluid">
-        </div>
-    </div>
-    <div class="row justify-content-center align-items-center mt-3">
-        <div class="col-md-4">
-            <img src="assets/img/CONSISTENT HIGHEST CUSTOMER SATISFACTION.jpg" class="img-fluid">
-        </div>
-        <div class="col-md-6">
-            <h5>
-                Consistent Highest Customer Satisfaction
-            </h5>
-            <p class="text-justify">
-                Our consistent, highest customer satisfaction rating makes us incredibly proud because
-                reliability and quality, both in our business models and the way in which we support
-                our customers is our core values.Check out our reviews and ratings at:Facebook Page,
-                Instagram Page,twitter page,and Google to see why customers love us. </p>
-
-        </div>
-    </div>
-    </div>
-    <div class="row justify-content-center align-items-center text-right mt-3">
-        <div class="col-md-6">
-            <h5>
-                Technology & Security Driven Online Shopping Site
-            </h5>
-            <p class="text-justify">
-                We've launched the "iTAP" (Innovation and Technology Adoption Program),
-                which aims to make krish villa a more technologically advanced eCommerce platform.
-                Every automated system was developed in-house, and we have our own IT firm, Fexcon,
-                that helps our customers navigate the ever-changing digital ecosystem.
-                To protect customer personal information, we are using an extended validation SSL
-                certificate (EV SSL), which provide the strongest encryption level for the site.
-                We do not store any credit card information in our system and all communication
-                channels with payment gateways are encrypted using secure socket layer
-                technology (EV SSL).
-        </div>
-
-        <div class="col-md-4">
-            <img src="assets/img/TECHNOLOGY & SECURITY DRIVEN ONLINE SHOPPING SITE.jpg" class="img-fluid">
-        </div>
-    </div>
-    <div class="row justify-content-center align-items-center mt-3">
-        <div class="col-md-4">
-            <img src="assets/img/awards.jpg" class="img-fluid">
-        </div>
-        <div class="col-md-6">
-            <h5>
-                Awards, Press Releases and Media
-            </h5>
-            <p class="text-justify">
-                WishQue won SLT Zero One Award Under the Best
-                Digital Enabled Product/Service - Retail Sector - 2019 (Award ceremony held i
-                n Colombo on 4 March 2020). Our constant innovation and investments towards
-                digital enhancements get us this award. Every day we are evolving and hoping to
-                release many cutting edge features in the future. For more details for Awards, Press Releases and Media, please visit this page:
-        </div>
-
-    </div>
     </div>
 
-</section>
+    </section>
 
 </div>
-
-<?php
-include 'includes/footer.php';
-?>
+          
+    <?php
+    include 'includes/footer.php';
+    ?>

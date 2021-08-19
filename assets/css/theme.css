@@ -10,9 +10,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+*/
 
 .page-bg{
-  background-color: #cecbcb;
+  margin: 0px;
 }
 
 .text-style-2{
@@ -52,11 +53,11 @@ h6 {
 }
 
 .pace .pace-progress {
-  background: #E91E63;
+  background: #1ee928;
 }
 
 .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #E91E63, 0 0 5px #E91E63;
+  box-shadow: 0 0 10px #0da314, 0 0 5px #0da314;
 }
 
 .pace .pace-activity {
@@ -114,7 +115,7 @@ section .card-title {
 
 .title {
   text-align: center;
-  color: #E91E63;
+  color: #000000;
   margin-bottom: 3rem;
 }
 
@@ -163,14 +164,6 @@ section .card-title {
 
 .owl-carousel .owl-nav div.owl-prev {
   left: 20px;
-}
-
-.owl-carousel .owl-nav div.owl-prev:hover {
-  /* background: $primary-color; */
-}
-
-.owl-carousel .owl-nav div.owl-next:hover {
-  /* background: $primary-color; */
 }
 
 .owl-carousel:hover .owl-nav div.owl-next {
@@ -508,7 +501,7 @@ footer .copyright {
 .page-header .navbar .navbar-nav .nav-link:focus,
 .page-header .navbar .navbar-nav .nav-link:hover,
 .page-header .navbar .navbar-nav .nav-link.active {
-  color: #000000;
+  color: #ffffff;
   background-color: #5dc52d;
   border-radius: 5px;
 
@@ -528,7 +521,7 @@ footer .copyright {
 }
 
 .page-header .navbar .navbar-nav .nav-link {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -550,7 +543,7 @@ footer .copyright {
 }
 
 .page-header .navbar .shopping-cart .shopping-cart-list .media h5 a {
-  color: #333333;
+  color: #ffffff;
 }
 
 .page-header .navbar .shopping-cart .shopping-cart-list .media h5 a:focus,
@@ -635,7 +628,6 @@ footer .copyright {
 }
 
 
-
 .page-header {
   overflow: hidden;
   background-color: #333;
@@ -644,9 +636,6 @@ footer .copyright {
   width: 100%;
 }
 
-.footer-bg {
-  background-color: rgb(148, 196, 136);
-}
 
 .end-bg {
   color: #ddd;
@@ -721,8 +710,7 @@ footer ul li a:focus {
 .page-header .navbar .navbar-nav .nav-link:hover,
 .page-header .navbar .navbar-nav .nav-link.active {
   color: #000000;
-  background-color: #5dc52d;
-  border-radius: 5px;
+  background-color: #ffffff;
 
 }
 
@@ -735,10 +723,11 @@ footer ul li a:focus {
 }
 
 .nav-b {
-  background-color: rgb(255, 255, 255) !important;
+  color: #ffffff !important;
+  background-color: rgba(15, 15, 15, 0.863) !important;
   z-index: 2;
   width: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.699), 0 6px 20px 0 rgba(0, 0, 0, 0.76);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.89), 0 6px 20px 0 rgba(0, 0, 0, 0.76);
 }
 
 .page-header .navbar .navbar-brand img {
@@ -746,7 +735,7 @@ footer ul li a:focus {
 }
 
 .page-header .navbar .navbar-nav .nav-link {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -863,7 +852,8 @@ footer ul li a:focus {
 }
 
 .footer-bg {
-  background-color: rgb(148, 196, 136);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .end-bg {
@@ -940,12 +930,14 @@ footer ul li a:focus {
 }
 
 .text-1 {
+  color: #000;
   font-size: 180%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .text-2 {
+  color: #000;
   font-size: 130%;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -969,4 +961,27 @@ footer ul li a:focus {
   font-size: 40px;
 }
 
+.pace .pace-progress {
+  background: #1ee928;
+}
+
+.pace .pace-progress-inner {
+  box-shadow: 0 0 10px #0da314, 0 0 5px #0da314;
+}
+
+.page-bg{
+  margin: 0px;
+}
+
+.card{
+  width: 50%;
+
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  width: 80%;
+}
 /*EASHAN*/
