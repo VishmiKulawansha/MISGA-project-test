@@ -26,7 +26,7 @@ include 'includes/JS.php';
                             echo 'assets\uploads\farmer\profile\\' . $_SESSION['profilePic'];
                         } else if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == "customer") {
                             echo 'assets\uploads\customer\profile\\' . $_SESSION['profilePic'];
-                        } else  {
+                        } else {
                             echo 'https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png';
                         }
                         ?>
@@ -99,6 +99,39 @@ include 'includes/JS.php';
                                 </form>
                             </div>
                         </div>
+
+
+                           
+
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <p class="text-primary m-0 font-weight-bold">Upload Farm Photos</p>
+                            </div>
+                            <div class="card-body">
+                            
+                                <form id="formFarmPhotos" class="formFarmPhotos" method="post" action="includes/profile.php"  enctype="multipart/form-data" >
+                                    <div class="form-row">
+                                        <div class="col">
+                                        <input id="profile-image-upload" name="files[]" class="hidden" multiple="multiple" type="file" onchange="previewFile()">
+                                    </div>
+                                        
+                                        <div class="alert alert-info alert-dismissible fade show" style="margin-top: 5px;" role="alert">
+                                        <strong>Please, Select only 5 images </strong>(.jpg, .jpeg, .png, .gif) to upload with less than 1MB each.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                    <button class="btn btn-danger btn-sm" type="submit" name="deleteFarmPhotos">delete&nbsp;photos</button>
+                                    <button class="btn btn-primary btn-sm" type="submit" name="UpdateFarmPhotos">Save&nbsp;Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
                         </form>
                     </div>
                 ';
@@ -151,49 +184,6 @@ include 'includes/JS.php';
                                     }
                                 }
                                 ?>
-                                <!-- <form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
-                                    <div class="form-row">
-                                        <div class="col">
-                                            <div class="form-group"><label for="fullName"><strong>Full Name</strong></label><input class="form-control" type="text" placeholder="Full Name" name="fullName" value="<?php echo  $_SESSION['name'] ?>" required></div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group"><label for="address"><strong>Address</strong></label><input class="form-control" type="address" placeholder="Address" name="address" value="<?php echo  $_SESSION['address'] ?>" required></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col">
-                                            <div class="form-group"><label for="teleNumber"><strong>Whatsapp Number</strong></label><input class="form-control" type="text" placeholder="Whatsapp Number" name="teleNumber" value="<?php echo   $_SESSION['telephone'] ?>" required></div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group"><label for="email"><strong>Email </strong></label><input class="form-control" type="text" placeholder="user@gmail.com" name="email" value="<?php echo   $_SESSION['email'] ?>" disabled></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" id="updateCustomer" name="updateCustomer">Save Changes</button></div>
-                                </form> -->
-                                <!-- </div>
-                        </div>
-                        <div class="card shadow">
-                            <div class="card-header py-3">
-                                <p class="text-primary m-0 font-weight-bold">Change Password</p>
-                            </div>
-                            <div class="card-body">
-                                <form id="formPassword" class="was-validated" method="post" action="includes/profile.php" oninput='confirmPass.setCustomValidity(confirmPass.value != newPass.value ? "Passwords do not match." : "")'>
-                                    <div class="form-row">
-                                        <div class="col">
-                                            <div class="form-group"><label for="address"><strong>New Password</strong></label><input class="form-control" type="password" id="newPass" name="newPass" required></div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group"><label for="address"><strong>Confirm Password</strong></label><input class="form-control" type="password" id="confirmPass" name="confirmPass" required></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" name="submitPassword">Save&nbsp;Changes</button></div>
-                                </form>
-                            </div>
-                        </div>
-                        </form>
-                    </div>
-                </div> -->
-                                <!--  sdfsdf -->
                             </div>
                         </div>
                     </div>

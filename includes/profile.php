@@ -32,8 +32,9 @@ if (isset($_POST['updateCustomer'])) {
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
-    // submit customer Password
-} else if (isset($_POST['submitCusPassword'])) {
+}
+// submit customer Password
+else if (isset($_POST['submitCusPassword'])) {
 
     $newPass = $_POST['newPass'];
     $confirmPass = $_POST['confirmPass'];
@@ -123,7 +124,9 @@ else if (isset($_POST['submitFarPassword'])) {
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
-} else if (isset($_POST['UpdateProfilePic'])) {
+}
+// update profile pic
+else if (isset($_POST['UpdateProfilePic'])) {
     // for the database
     // $bio = stripslashes($_POST['bio']);
     $profileImageName = time() . '-' . $_FILES["profile-image-upload"]["name"];
@@ -171,5 +174,144 @@ else if (isset($_POST['submitFarPassword'])) {
             echo "There was an erro uploading the file";
             $msg = "alert-danger";
         }
+    }
+}
+// update farm pictures
+else if (isset($_POST['UpdateFarmPhotos'])) {
+
+
+
+    $errors = array();
+    $uploadedFiles = array();
+    $extension = array("jpeg", "jpg", "png", "PNG", "gif");
+    $bytes = 1024;
+    $KB = 1024;
+    $totalBytes = $bytes * $KB;
+    $UploadFolder = "../assets/uploads/farmer/farms/";
+    $farmerCode = $_SESSION['farmerCode'];
+    $counter = 0;
+
+    // check if database already have 5 photos
+    $sql = "SELECT * FROM farm_images WHERE farmerCode = '$farmerCode'";
+    $result = mysqli_query($conn, $sql) or trigger_error("Query Failed! SQL: $sql - Error: " . mysqli_error($conn), E_USER_ERROR);
+
+    // while($data = mysqli_fetch_assoc($result)){
+    //     echo $data["name"];
+    // }
+    $row = mysqli_fetch_assoc($result);
+    $rowcount = mysqli_num_rows($result);
+
+    if ($rowcount > 0) {
+        //  ALERT AND GO BACK PREVIOUS PAGE
+        echo '<script>';
+        echo 'if (window.confirm("You have already uploaded farm images!  \n Please go back and remove them to upload new images?"))
+         {
+             
+             // They clicked Yes
+            window.history.back();
+           
+            
+         }
+         else
+         {
+             // They clicked no
+             window.history.back();
+         }';
+        echo '</script> ';
+    } else {
+
+
+
+        // uploading code
+
+        foreach ($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
+            $temp = $_FILES["files"]["tmp_name"][$key];
+            $name = $_FILES["files"]["name"][$key];
+            $ImageName = time() . '-' . $_FILES["files"]["name"][$key];
+            if (empty($temp)) {
+                break;
+            }
+
+            $counter++;
+            $UploadOk = true;
+
+            if ($_FILES["files"]["size"][$key] > $totalBytes) {
+                $UploadOk = false;
+                array_push($errors, $ImageName . " file size is larger than the 1 MB.");
+            }
+
+            $ext = pathinfo($ImageName, PATHINFO_EXTENSION);
+            if (in_array($ext, $extension) == false) {
+                $UploadOk = false;
+                array_push($errors, $ImageName . " is invalid file type.");
+            }
+
+            if (file_exists($UploadFolder . "/" . $ImageName) == true) {
+                $UploadOk = false;
+                array_push($errors, $ImageName . " file  already exists.");
+            }
+
+            if ($UploadOk == true) {
+                // upload to database and server
+                move_uploaded_file($temp, $UploadFolder . "/" . $ImageName);
+                // $sql = "INSERT INTO farm_images WHERE farmerCode='$farmerCode', farmPic='$ImageName'";
+                $sql = "INSERT INTO farm_images (farmerCode, farmPic) VALUES('$farmerCode','$ImageName')";
+
+                if (mysqli_query($conn, $sql) or trigger_error("Query Failed! SQL: $sql - Error: " . mysqli_error($conn), E_USER_ERROR)) {
+                    echo "<b>Uploaded files to database:</b>";
+                } else {
+                    echo "<b>Erro in Uploading files to database:</b>";
+                }
+
+                array_push($uploadedFiles, $ImageName);
+            }
+        }
+
+        if ($counter > 0) {
+            if (count($errors) > 0) {
+                echo "<b>Errors:</b>";
+                echo "<br/><ul>";
+                foreach ($errors as $error) {
+                    echo "<li>" . $error . "</li>";
+                }
+                echo "</ul><br/>";
+            }
+
+            if (count($uploadedFiles) > 0) {
+                echo "<b>Uploaded Files:</b>";
+                echo "<br/><ul>";
+                foreach ($uploadedFiles as $fileName) {
+                    echo "<li>" . $fileName . "</li>";
+                }
+                echo "</ul><br/>";
+
+                echo count($uploadedFiles) . " file(s) are successfully uploaded.";
+            }
+        } else {
+            echo "Please, Select file(s) to upload.";
+        }
+    }
+} else if (isset($_POST['deleteFarmPhotos'])) {
+    $farmerCode = $_SESSION['farmerCode'];
+    $sql = "DELETE FROM farm_images WHERE farmerCode = '$farmerCode'";
+    if (mysqli_query($conn, $sql) or trigger_error("Query Failed! SQL: $sql - Error: " . mysqli_error($conn), E_USER_ERROR)) {
+        //  ALERT AND GO BACK PREVIOUS PAGE
+        echo '<script>';
+        echo 'if (window.confirm("You have deleted your farm images!  \n  Go back previous page?"))
+         {
+             
+             // They clicked Yes
+            window.history.back();
+           
+            
+         }
+         else
+         {
+             // They clicked no
+             window.history.back();
+         }';
+        echo '</script> ';
+    } else {
+        echo "<b>Erro in Uploading files to database:</b>";
     }
 }
