@@ -8,6 +8,7 @@
 <script type="text/javascript" src="assets/packages/thumbelina/thumbelina.js"></script>
 <script type="text/javascript" src="assets/packages/bootstrap-touchspin/bootstrap-touchspin.js"></script>
 <script type="text/javascript" src="assets/js/theme.js"></script>
+<!-- sweet alert -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 

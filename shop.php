@@ -2,7 +2,6 @@
 
 // Starting the Session
 session_start();
-
 include 'includes/head.php';
 include 'navbar.php';
 include 'includes/header.php';

@@ -1,8 +1,12 @@
+<?php
+$alert_icon = "warning";
+?>
+
 <script>
-    swal({
-        title: "Good job!",
-        text: "Successfully added!",
-        icon: "success",
-        button: "OK!",
-    });
+    Swal.fire({
+        icon: '<?php echo $alert_icon ?>',
+        title: 'Oops...',
+        text: 'dsffgdso sfsod jfsoid f',
+
+    })
 </script>
