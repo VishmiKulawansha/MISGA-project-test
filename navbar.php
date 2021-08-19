@@ -131,6 +131,14 @@
                                 }
                                 ?>
                                 "></div>
+
+                                &nbsp;|&nbsp;
+                                <?php
+                                if (isset($_SESSION['login_user'])) {
+                                    $user =  $_SESSION['login_user'];
+                                    echo '<span class="d-none d-lg-inline mr-2 text-gray-600 small">' . "" . $_SESSION['login_user'] . '</span>';
+                                }
+                                ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="userProfile.php" class="dropdown-item">
@@ -152,15 +160,7 @@
 
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <div class=" text-dark ">
-                                <?php
-                                if (isset($_SESSION['login_user'])) {
-                                    $user =  $_SESSION['login_user'];
-                                    echo '<span class="d-none d-lg-inline mr-2 text-gray-600 small">' . "" . $_SESSION['login_user'] . " | " . '</span>';
-                                }
-                                ?> </div>
-                        </li>
+
 
                     </ul>
                 </div>
