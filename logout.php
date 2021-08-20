@@ -8,6 +8,6 @@ if (isset($_POST['logout'])) {
     // alert
     $_SESSION['status'] = "You have Logged out!";
     $_SESSION['status_code'] = "info";
-    header("Location: index.php");
+    header("Location:index.php");
     exit();
 }

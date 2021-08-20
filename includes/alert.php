@@ -1,12 +1,18 @@
+
+<!-- sweet alert 2-->
 <?php
-$alert_icon = "warning";
+
+if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
 ?>
+    <script>
+        Swal.fire({
 
-<script>
-    Swal.fire({
-        icon: '<?php echo $alert_icon ?>',
-        title: 'Oops...',
-        text: 'dsffgdso sfsod jfsoid f',
-
-    })
-</script>
+            text: "<?php echo $_SESSION['status'] ?>",
+            icon: "<?php echo $_SESSION['status_code'] ?>",
+            confirmButtonText: 'Ok'
+        })
+    </script>
+<?php
+    unset($_SESSION['status']);
+}
+?>

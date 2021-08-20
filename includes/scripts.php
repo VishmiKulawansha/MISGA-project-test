@@ -115,6 +115,49 @@ try {
          mysqli_close($conn);
       }
    }
+   if (isset($_POST['logAdmin'])) {
+
+      // Get the Posted Informations and assigned them to the local variables
+      $userName = ($_POST['userName']);
+      $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+      //error handlers
+      //check if inputs are empty
+      if (empty($userName) || empty($password)) {
+         header("Location:../login.php?Login-empty");
+         exit();
+      } else {
+         // Set the query String
+         $sql = "SELECT * FROM admin WHERE userName = '$userName' AND password = '$password'";
+         $result = mysqli_query($conn, $sql) or trigger_error("Query Failed! SQL: $sql - Error: " . mysqli_error($conn), E_USER_ERROR);
+
+         $row = mysqli_fetch_assoc($result);
+
+         $count = mysqli_num_rows($result);
+
+         // If result matched $myusername and $mypassword, table row must be 1 row
+
+         if ($count == 1) {
+            // Create session data
+            session_unset();
+            $_SESSION['user_type'] = "admin";
+            $_SESSION['login_user'] = $userName;
+            $_SESSION['userName'] = $row['userName'];
+
+            // alert
+            $_SESSION['status'] = "Login Successfull!";
+            $_SESSION['status_code'] = "success";
+            header("location: ../admin/dashboard.php");
+         } else {
+            // alert
+            $_SESSION['status'] = "Login Failed!";
+            $_SESSION['status_code'] = "error";
+
+            header("location: ../login.php?invalid-userName-or-password");
+         }
+         mysqli_close($conn);
+      }
+   }
 } catch (Exception $e) {
    echo $e;
 }

@@ -152,6 +152,11 @@
                                         <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Login
                                     </button>
                                 </form>
+
+                                <button type="button" class="dropdown-item" name="adminLogin" data-toggle="modal" data-target="#adminModal">
+                                    <i class="fas fa-cogs"></i>&nbsp;&nbsp;&nbsp;Admin
+                                </button>
+
                                 <form action="logout.php" method="POST">
                                     <button type="submit" class="dropdown-item" name="logout">
                                         <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;Logout
@@ -167,4 +172,39 @@
 
             </div>
         </nav>
+    </div>
+
+    <!-- Admin Login Modal-->
+    <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Admin Login</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Enter your admin username and password to continue.
+                    <!--admin login form -->
+                    <form class="form-horizontal" action="includes/scripts.php" method="POST">
+                        <div class="form-group row mt-3">
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" required="" placeholder="username" name="userName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input class="form-control" type="password" required="" placeholder="Password" name="password">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" type="submit" name="logAdmin">Login</button>
+
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
