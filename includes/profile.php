@@ -273,7 +273,11 @@ else if (isset($_POST['UpdateFarmPhotos'])) {
                 echo count($uploadedFiles) . " file(s) are successfully uploaded.";
             }
         } else {
-            echo "Please, Select file(s) to upload.";
+
+            // alert
+            $_SESSION['status'] = "Error uploading! Please Select file(s) to upload.";
+            $_SESSION['status_code'] = "error";
+            header("location: ../UserProfile.php?update-failed");
         }
     }
 }
@@ -289,6 +293,7 @@ else if (isset($_POST['deleteFarmPhotos'])) {
         header("location: ../UserProfile.php?delete-success");
     } else {
         echo "<b>Erro in Uploading files to database:</b>";
+
         // alert
         $_SESSION['status'] = "Error deleting files from database! Try again.";
         $_SESSION['status_code'] = "error";

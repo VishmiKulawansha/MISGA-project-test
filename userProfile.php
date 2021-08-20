@@ -8,17 +8,18 @@ if (!isset($_SESSION['user_type'])) {
 include 'includes/dbcon.php';
 include 'includes/head.php';
 include 'navbar.php';
-include 'includes/header.php';
+include 'includes/r_l-header.php';
 include 'includes/JS.php';
 ?>
-<div class="container center">
-    <div class="container-fluid">
-        <h3 class="text-dark mb-6">Profile </h3>
-        <div class="col-lg-12">
-            <div class="card mb-3">
-                <div class="profile-pic center">
-                    <form id="formUpdateProfilePic" class="formUpdateProfilePic" method="POST" action="includes/profile.php" enctype="multipart/form-data">
-                        <img alt="User Pic" class="rounded-circle p-2" src=" 
+<div class="w3-container w3-center w3-animate-zoom">
+    <div class="container center">
+        <div class="container-fluid">
+            <h3 class="text-dark mb-6">Profile </h3>
+            <div class="col-lg-12">
+                <div class="card ">
+                    <div class="profile-pic center">
+                        <form id="formUpdateProfilePic" class="formUpdateProfilePic" method="POST" action="includes/profile.php" enctype="multipart/form-data">
+                            <img alt="User Pic" class="rounded-circle p-2" src=" 
                         <?php
                         // DISPLAY USER PROFILE IMAGE
 
@@ -31,27 +32,28 @@ include 'includes/JS.php';
                         }
                         ?>
                          " id="profile-image1" height="200">
-                        <input id="profile-image-upload" name="profile-image-upload" class="hidden" type="file" onchange="previewFile()">
+                            <input id="profile-image-upload" name="profile-image-upload" class="hidden" type="file" onchange="previewFile()">
 
-                        <button class="btn btn-primary btn-sm" type="submit" id="UpdateProfilePic" name="UpdateProfilePic">Submit</button>
-                        <div style="color:#999;"> </div>
+                            <button class="btn btn-primary btn-sm" type="submit" id="UpdateProfilePic" name="UpdateProfilePic">Submit</button>
+                            <div style="color:#999;"> <br> </div>
+                    </div>
+                    </form>
                 </div>
-                </form>
-                <div class="row">
-                    <div class="col">
-                        <div class="card shadow mb-3">
-                            <div class="card-header py-3">
-                                <p class="text-primary m-0 font-weight-bold">User Details</p>
-                            </div>
-                            <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card shadow mb-3">
+                                <div class="card-header py-3">
+                                    <p class="text-primary m-0 font-weight-bold">User Details</p>
+                                </div>
+                                <div class="card-body">
 
-                                <!-- FARMER / CUSTOMER UPDATE FORM -->
-                                <?php
-                                if (isset($_SESSION['user_type'])) {
-                                    // FARMER CODE
-                                    if ($_SESSION['user_type'] == "farmer") {
+                                    <!-- FARMER / CUSTOMER UPDATE FORM -->
+                                    <?php
+                                    if (isset($_SESSION['user_type'])) {
+                                        // FARMER CODE
+                                        if ($_SESSION['user_type'] == "farmer") {
 
-                                        echo '<form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
+                                            echo '<form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
                                      <div class="form-row">
                                          <div class="col">
                                              <div class="form-group"><label for="fullName"><strong>Full Name</strong></label><input class="form-control" type="text" placeholder="Full Name" name="fullName" value="' . $_SESSION['name'] . '" required></div>
@@ -135,9 +137,9 @@ include 'includes/JS.php';
                         </form>
                     </div>
                 ';
-                                    } else if ($_SESSION['user_type'] == "customer") {
-                                        // CUSTOMER CODE
-                                        echo '<form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
+                                        } else if ($_SESSION['user_type'] == "customer") {
+                                            // CUSTOMER CODE
+                                            echo '<form id="formUserDetails" class="formUserDetails" method="post" action="includes/profile.php">
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group"><label for="fullName"><strong>Full Name</strong></label><input class="form-control" type="text" placeholder="Full Name" name="fullName" value="' . $_SESSION['name'] . '" required></div>
@@ -181,9 +183,10 @@ include 'includes/JS.php';
                     </div>
                 </div>
                                     ';
+                                        }
                                     }
-                                }
-                                ?>
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>

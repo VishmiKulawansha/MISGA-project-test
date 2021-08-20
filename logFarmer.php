@@ -1,12 +1,13 @@
 <?php
 include 'includes/head.php';
 include 'navbar.php';
-include 'includes/header.php';
+include 'includes/r_l-header.php';
 include 'includes/JS.php';
 ?>
-
-<section class="container">
-    <div class="box-3" style="background-image: url('assets/img/bg.jpg');">
+<div class="w3-container w3-center w3-animate-zoom">
+    <p><br></p>
+    <p class="text-1">FARMER LOGIN</p>
+    <div class="container">
         <div class="card card-login mb-5">
             <div class="card-body">
                 <form class="form-horizontal" action="includes/scripts.php" method="POST">
@@ -31,14 +32,14 @@ include 'includes/JS.php';
                     </div>
                     <div class="form-group row text-center mt-4">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary btn-block text-uppercase" name="logFarmer">Log In</button>
+                            <button type="submit" class="btn btn-primary  text-uppercase" name="logFarmer">Log In</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <?php
 include 'includes/footer.php';

@@ -44,78 +44,7 @@
                             <a href="contact-us.php" class="nav-link">Contact-Us</a>
                         </li>
 
-                        <!-- navbar shop -->
-                        <li class="nav-item dropdown">
-                            <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-shopping-basket"></i> <span class="badge badge-primary"></span>
-                            </a>
-                            <div class="dropdown-menu shopping-cart">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">Your Cart</div>
-                                    </li>
-                                    <li>
-                                        <div class="shopping-cart-list">
-                                            <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg" width="60">
-                                                <div class="media-body">
-                                                    <h5><a href="javascript:void(0)">Carrot</a></h5>
-                                                    <p class="price">
-                                                        <span class="discount text-muted">Rp. 700.000</span>
-                                                        <span>Rp. 100.000</span>
-                                                    </p>
-                                                    <p class="text-muted">Qty: 1</p>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg" width="60">
-                                                <div class="media-body">
-                                                    <h5><a href="javascript:void(0)">Carrot</a></h5>
-                                                    <p class="price">
-                                                        <span class="discount text-muted">Rp. 700.000</span>
-                                                        <span>Rp. 100.000</span>
-                                                    </p>
-                                                    <p class="text-muted">Qty: 1</p>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg" width="60">
-                                                <div class="media-body">
-                                                    <h5><a href="javascript:void(0)">Carrot</a></h5>
-                                                    <p class="price">
-                                                        <span class="discount text-muted">Rp. 700.000</span>
-                                                        <span>Rp. 100.000</span>
-                                                    </p>
-                                                    <p class="text-muted">Qty: 1</p>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg" width="60">
-                                                <div class="media-body">
-                                                    <h5><a href="javascript:void(0)">Carrot</a></h5>
-                                                    <p class="price">
-                                                        <span class="discount text-muted">Rp. 700.000</span>
-                                                        <span>Rp. 100.000</span>
-                                                    </p>
-                                                    <p class="text-muted">Qty: 1</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="drop-title d-flex justify-content-between">
-                                            <span>Total:</span>
-                                            <span class="text-primary"><strong>Rp. 2000.000</strong></span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex justify-content-between pl-3 pr-3 pt-3">
-                                        <a href="cart.php" class="btn btn-secondary">View Cart</a>
-                                        <a href="checkout.php" class="btn btn-primary">Checkout</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
+                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="avatar-header"><img src="
@@ -152,6 +81,11 @@
                                         <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Login
                                     </button>
                                 </form>
+
+                                <button type="button" class="dropdown-item" name="adminLogin" data-toggle="modal" data-target="#adminModal">
+                                    <i class="fas fa-cogs"></i>&nbsp;&nbsp;&nbsp;Admin
+                                </button>
+
                                 <form action="logout.php" method="POST">
                                     <button type="submit" class="dropdown-item" name="logout">
                                         <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;Logout
@@ -167,4 +101,39 @@
 
             </div>
         </nav>
+    </div>
+
+    <!-- Admin Login Modal-->
+    <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Admin Login</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Enter your admin username and password to continue.
+                    <!--admin login form -->
+                    <form class="form-horizontal" action="includes/scripts.php" method="POST">
+                        <div class="form-group row mt-3">
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" required="" placeholder="username" name="userName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input class="form-control" type="password" required="" placeholder="Password" name="password">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" type="submit" name="logAdmin">Login</button>
+
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
