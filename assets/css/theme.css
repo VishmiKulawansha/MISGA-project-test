@@ -724,10 +724,9 @@ footer ul li a:focus {
 
 .nav-b {
   color: #ffffff !important;
-  background-color: rgba(15, 15, 15, 0.863) !important;
+  background-color: rgba(0, 0, 0, 0.904) !important;
   z-index: 2;
   width: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.89), 0 6px 20px 0 rgba(0, 0, 0, 0.76);
 }
 
 .page-header .navbar .navbar-brand img {
@@ -886,9 +885,7 @@ footer ul li a:focus {
 
 .btn-primary {
   background: rgb(69, 170, 44) !important;
-  ;
   border-color: rgb(69, 170, 44) !important;
-  ;
 }
 
 .btn-primary:hover,
@@ -905,9 +902,6 @@ footer ul li a:focus {
   color: #fffefe;
 }
 
-.bg-primary {
-  background-color: #dadada !important;
-}
 
 .text-light {
   color: #000000 !important;
@@ -925,7 +919,7 @@ footer ul li a:focus {
 .text-0 {
   font-size: 250%;
   text-align: center;
-  font-family: Script MT;
+  font-family: 'Courier New', Courier, monospace;
   color: #008840;
 }
 
@@ -933,23 +927,25 @@ footer ul li a:focus {
   color: #000;
   font-size: 180%;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Montserrat", "Helvetica Neue", "Arial, sans-serif;
+  font-weight: 300;
 }
 
 .text-2 {
   color: #000;
   font-size: 130%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Montserrat", "Helvetica Neue", "Arial, sans-serif;
   text-align: center;
+  font-weight: 100;
 }
 
 .page-bg {
-  background-color: #e6e4e4;
+  background-color: #d2d9da;
 }
 
 .text-3 {
   color: #dfdede;
-  text-shadow: #000000 !important;
+  text-shadow: #111111 !important;
   font-family: Showcard Gothic;
 }
 
@@ -969,9 +965,7 @@ footer ul li a:focus {
   box-shadow: 0 0 10px #0da314, 0 0 5px #0da314;
 }
 
-.page-bg{
-  margin: 0px;
-}
+
 
 .card{
   width: 50%;
@@ -982,6 +976,54 @@ footer ul li a:focus {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
-  width: 80%;
 }
-/*EASHAN*/
+
+.navbar-toggler-icon{
+  color: rgb(255, 255, 255) !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #5f5c5c !important;
+  border-radius: 5px;
+  border-color: #ffffff !important;
+  border-width: 10px;
+}
+
+.r_l-header-bg{
+  padding: auto;
+}
+
+.r_l-text-3{
+  color: #dfdede;
+  text-shadow: #000000 !important;
+  font-family: Showcard Gothic;
+  text-align: center;
+  font-size: 80px;
+}
+
+.bg-primary {
+  background-color: #afacac !important;
+  border-radius: 15px;
+}
+
+.bg-leaf{
+  font-family: Montserrat", "Helvetica Neue", "Arial, sans-serif;
+}
+
+.card-b{
+  padding: auto;
+  border-radius: 15px;
+  
+}
+
+.body-1{
+  color: #ffffff;
+  font-size: 17px;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 150;
+}
+
+.body-2{
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 150;
+}

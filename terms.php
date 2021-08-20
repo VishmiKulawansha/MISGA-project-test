@@ -1,9 +1,10 @@
 <?php
 include 'includes/head.php';
 include 'navbar.php';
-include 'includes/header.php';
+include 'includes/r_l-header.php';
 include 'includes/JS.php';
 ?>
+<div class="w3-container w3-center w3-animate-zoom">
 <section id="faq">
     <div class="container">
         <div class="row">

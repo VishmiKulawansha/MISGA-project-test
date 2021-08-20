@@ -50,6 +50,7 @@ include 'includes/JS.php';
 </style>
 </head>
 <body>
+<div class="w3-container w3-center w3-animate-zoom">
 
 
 <div class="dropdown">
