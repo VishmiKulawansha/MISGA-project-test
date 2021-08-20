@@ -30,8 +30,8 @@ $vegCount = mysqli_num_rows($result4);
             labels: ["Fruits", "Leaves", "Vegetables"],
             datasets: [{
                 <?php echo 'data: [' . $fruitsCount . ',' . $leavesCount . ',' . $vegCount . ']' ?>,
-                backgroundColor: ['#3D9727', '#1cc88a', '#36b9cc'],
-                hoverBackgroundColor: ['#19732c', '#17a673', '#2c9faf'],
+                backgroundColor: ['#3D9727', '#f6c23e', '#36b9cc'],
+                hoverBackgroundColor: ['#19732c', '#c1982f', '#2c9faf'],
                 hoverBorderColor: "rgba(234, 236, 244, 1)",
             }],
         },
