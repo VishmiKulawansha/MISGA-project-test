@@ -3,7 +3,7 @@
     session_start();
     $database_name = "misga2.sql";
     $con = mysqli_connect("localhost","root","",$database_name);
-     if (isset($_POST["add"])){
+       if (isset($_POST["add"])){
         if (isset($_SESSION["cart"])){
             $item_array_id = array_column($_SESSION["cart"],"product_id");
             if (!in_array($_GET["id"],$item_array_id)){
