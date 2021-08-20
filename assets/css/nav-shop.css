@@ -1,0 +1,211 @@
+
+/*EASHAN*/
+/*Nav-bar CSS*/
+
+
+
+.page-header .navbar .navbar-nav .nav-link:focus,
+.page-header .navbar .navbar-nav .nav-link:hover,
+.page-header .navbar .navbar-nav .nav-link.active {
+  color: #ffffff;
+  background-color: #5dc52d;
+  border-radius: 5px;
+
+}
+
+.page-header .navbar .navbar-nav .dropdown .badge {
+  position: fixed;
+  top: 5px;
+  font-weight: 400;
+  text-align: center;
+  background-color: #fff;
+}
+
+
+.page-header .navbar .navbar-brand img {
+  height: 60px;
+}
+
+.page-header .navbar .navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.page-header .navbar.bg-white .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+.page-header .navbar.bg-white .navbar-nav .nav-link:focus,
+.page-header .navbar.bg-white .navbar-nav .nav-link:hover,
+.page-header .navbar.bg-white .navbar-nav .nav-link.active {
+  color: #ffffff;
+}
+
+.active-btn {
+  background-color: rgb(54, 139, 15);
+  border-radius: 5px;
+}
+
+.page-header .navbar .shopping-cart .shopping-cart-list .media h5 a {
+  color: #ffffff;
+}
+
+.page-header .navbar .shopping-cart .shopping-cart-list .media h5 a:focus,
+.page-header .navbar .shopping-cart .shopping-cart-list .media h5 a:hover,
+.page-header .navbar .shopping-cart .shopping-cart-list .media h5 a.active {
+  color: #ffffff;
+}
+
+.page-header .navbar .shopping-cart .shopping-cart-list .media p {
+  margin: 0;
+}
+
+
+/*/Nav-bar CSS*/
+
+
+.color-bg {
+  background-color: #ddd4d4;
+}
+
+.font {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+.center {
+  text-align: center;
+}
+
+.box-1 {
+  background-color: #e7e0e0b0;
+  height: auto;
+  padding: 50px;
+  margin: 20px;
+  box-align: center;
+  text-align: center;
+  color: #000000;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.699), 0 6px 20px 0 rgba(0, 0, 0, 0.76);
+
+}
+
+.cat {
+  font-size: 45px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 50px;
+  background-color: lightgreen;
+  color: #5e5050;
+
+}
+
+.box-2 {
+  background-color: #5e5050;
+  height: 350px;
+  width: 450px;
+  padding: 50px;
+  margin: 20px;
+  box-align: center;
+  text-align: center;
+  color: #ffffff42;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.699), 0 6px 20px 0 rgba(0, 0, 0, 0.76);
+
+  border-radius: 10px;
+
+}
+
+.box-3 {
+  background-color: rgba(194, 188, 188, 0.664);
+  border-radius: 10px;
+  padding: 50px;
+  margin: 20px;
+  box-align: center;
+  text-align: center;
+  color: #ffffffb0;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.699), 0 6px 20px 0 rgba(0, 0, 0, 0.76);
+}
+
+
+.page-header {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+.end-bg {
+  color: #ddd;
+  background-color: rgb(7, 19, 2);
+  text-align: center;
+  height: 30px;
+  font-family: Arial;
+}
+
+
+.header-2 {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-family: Arial;
+}
+
+.header-bg {
+  padding: 140px;
+  text-align: center;
+  color: white;
+  font-size: 80px;
+  font-family: Arial;
+}
+
+.btn-primary {
+  background: rgb(69, 170, 44) !important;
+  ;
+  border-color: rgb(69, 170, 44) !important;
+  ;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: rgb(35, 87, 22) !important;
+  ;
+  border-color: rgb(35, 87, 22) !important;
+  ;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.699), 0 6px 20px 0 rgba(0, 0, 0, 0.76);
+}
+
+.buy-now {
+  color: #fffefe;
+}
+
+.bg-primary {
+  background-color: #dadada !important;
+}
+
+.text-light {
+  color: #000000 !important;
+}
+
+.text-title {
+  color: #000000;
+}
+
+footer ul li a:hover,
+footer ul li a:focus {
+  color: #00ffff;
+}
+
+
+
+/*EASHAN*/
+/*Nav-bar CSS*/

@@ -24,7 +24,7 @@
                             </li>';
                             } else {
                                 echo '<li class="nav-item">
-                                <a href="sell.php" class="nav-link">Sell</a>
+                                <a href="" class="nav-link">Sell</a>
                             </li>';
                             }
                         } else {

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include 'includes/head.php';
 include 'navbar.php';
 include 'includes/r_l-header.php';

@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
 try {
     include_once 'dbcon.php';
 
@@ -20,11 +20,17 @@ try {
 
         if (mysqli_query($conn, $sql_query)) {
             // echo "New customer added successfully !";
-            echo '<script>alert("New customer added successfully !")</script>';
 
-            header("Location:../logCustomer.php");
+            // alert
+            $_SESSION['status'] = "New customer added successfully";
+            $_SESSION['status_code'] = "success";
+            header("location: ../logCustomer.php?user-added");
         } else {
             echo "Error" . $sql . "" . mysqli_error($conn);
+            // alert
+            $_SESSION['status'] = "Error adding customer! try again";
+            $_SESSION['status_code'] = "error";
+            header("location: ../logCustomer.php?user-adding-failed");
         }
         mysqli_close($conn);
     }

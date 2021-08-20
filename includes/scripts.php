@@ -49,7 +49,7 @@ try {
             $_SESSION['status'] = "Login Successful!";
             $_SESSION['status_code'] = "success";
 
-            header("location: ../shop.php");
+            header("location: ../userProfile.php");
          } else {
 
             // alert
